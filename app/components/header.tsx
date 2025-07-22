@@ -9,8 +9,11 @@ export default function Header() {
 const pathname = usePathname();
 const [hidden, setHidden] = useState(false);
 const [lastScrollY, setLastScrollY] = useState(0);
+const [isClient, setIsClient] = useState(false); 
 
 useEffect(() => {
+    setIsClient(true);
+
     const handleScroll = () => {
     const currentScrollY = window.scrollY;
     setHidden(currentScrollY > lastScrollY);
@@ -30,22 +33,24 @@ const navItems = [
     { href: '/contact-page', label: 'Contact' },
 ];
 
+if (!isClient) return null;
+
 return (
     <nav
-        className={`navbar fixed-top shadow-sm transition-transform ${ hidden ? '-translate-y-full' : 'translate-y-0' }`}
-        style={{ backdropFilter: 'blur(10px)' }}
+    className={`navbar fixed-top shadow-sm transition-transform ${ hidden ? '-translate-y-full' : 'translate-y-0'}`}
+    style={{ backdropFilter: 'blur(10px)' }}
     >
     <div className="container div-header d-flex justify-content-between align-items-center bg">
-        <Link href="/" className="navbar-brand company-name fw-bold">
-        Suitmedia Ideas
+        <Link href="/" className="navbar-brand fw-bold">
+            <img src="/images/logo.png" alt="Suitmedia Logo" className="logo" />
         </Link>
-        <div className="d-flex gap-3 ">
+        <div className="d-flex gap-3">
         {navItems.map((item) => (
             <Link
             key={item.href}
             href={item.href}
-            className={`nav-link ${
-                pathname === item.href ? 'border-bottom border-2 border-dark' : ''
+            className={`nav-link position-relative pb-3 ${
+                pathname === item.href ? 'active-page' : ''
             }`}
             >
             {item.label}

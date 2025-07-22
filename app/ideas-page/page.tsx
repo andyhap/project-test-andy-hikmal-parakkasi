@@ -1,9 +1,11 @@
 import React from 'react'
+import Banner from '@/components/banner';
 
-const Ideas = () => {
+export default function IdeasPage() {
   return (
-    <p>TESTING</p>
-  )
+    <main>
+      <Banner />
+      {/* konten lain */}
+    </main>
+  );
 }
-
-export default Ideas
