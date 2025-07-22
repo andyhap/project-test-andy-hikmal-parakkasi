@@ -1,0 +1,13 @@
+.navbar{
+    background: #FF7F00;
+    color: #FFFFFF;
+}
+
+.company-name {
+    color: #FFFFFF;
+}
+
+.active-page {
+    border-bottom: 3px solid;
+    padding-top: 100px;            
+}
