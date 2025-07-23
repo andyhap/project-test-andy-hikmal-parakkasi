@@ -3,11 +3,9 @@
 }
 
 .navbar{
-    /* padding-top: 1rem;
-    padding-bottom: 1rem; */
     background: rgb(235, 104, 47);
     color: #FFFFFF;
-    font-size: 1.19rem;
+    font-size: 1.19rem;;
 }
 
 .nav-link {
@@ -29,4 +27,41 @@
 
 .active-page {
     padding-bottom: 0.8rem !important;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
+
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.mobile-menu {
+    animation: slideDown 0.3s ease-in-out;
+    color: black;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

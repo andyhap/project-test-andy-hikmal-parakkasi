@@ -1,9 +1,12 @@
 import React from 'react'
+import Banner from '@/components/banner';
+import ListPost from '@/components/listpost';
 
-const Services = () => {
+export default function Work() {
   return (
-    <p>TESTING</p>
-  )
+    <main>
+      <Banner imageUrl="https://c1.wallpaperflare.com/preview/879/451/612/wood-desktop-paper-leaves.jpg"/>
+      <ListPost />
+    </main>
+  );
 }
-
-export default Services

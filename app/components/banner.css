@@ -1,3 +1,8 @@
+.banner-wrapper {
+    position: relative;
+    margin-bottom: 50px;
+}
+
 .banner-container {
     position: relative;
     height: 500px;
@@ -5,6 +10,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
 }
 
 .banner-image {
@@ -12,11 +19,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 120%;
+    height: 110%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.1s ease-out;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.4, 1);
     z-index: -1;
+    transform-origin: center bottom;
 }
 
 .banner-content {
@@ -24,14 +32,46 @@
     text-align: center;
     z-index: 1;
     padding: 20px;
-    backdrop-filter: brightness(100%);
-}
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
 .banner-title {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
 }
 
 .banner-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.banner-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 70%);
+    z-index: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

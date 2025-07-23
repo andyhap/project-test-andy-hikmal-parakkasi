@@ -1,4 +1,8 @@
-.line-clamp-3 {
+.btn-active{
+    background-color: rgb(235, 104, 47);
+}
+
+.text-truncate-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
