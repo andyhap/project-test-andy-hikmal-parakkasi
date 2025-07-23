@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Suitmedia Ideas",
+    title: "Suitmedia test",
 };
 
 export default function RootLayout({
